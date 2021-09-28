@@ -11,7 +11,7 @@ namespace AlgorithmProblems
         static void Main(string[] args)
         {
             List<int> list = new List<int>();
-
+            //Adding Elements in a List
             list.Add(1);
             list.Add(5);
             list.Add(7);
@@ -21,11 +21,11 @@ namespace AlgorithmProblems
             list.Add(13);
             list.Add(9);
             Console.WriteLine("Unsorted List");
-            list.ForEach(Console.WriteLine);
+            list.ForEach(Console.WriteLine);//Displaying UnSorted List
             Sorting obj = new Sorting();
-            obj.Sort(list);
+            obj.BubbleSort(list);
             Console.WriteLine("\nSorted List");
-            list.ForEach(Console.WriteLine);
+            list.ForEach(Console.WriteLine);//Displaying Sorted List
             Console.ReadLine();
           
         }
