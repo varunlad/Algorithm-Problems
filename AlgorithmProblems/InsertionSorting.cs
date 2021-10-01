@@ -10,34 +10,27 @@ namespace AlgorithmProblems
     {
         public void Inputs()
         {
-            string[] words = { "tiger","lion","rat","elephant","monkey"};
-            Console.WriteLine("Unsorted List :");
-            Display(words);
-            Sort(words);
-        }
-        public void Sort(string[] words)
-        {
-            for (int i = 1; i < words.Count(); i++)//Starting loop from i=1 postion
+            int[] numbers = { 5, 31, 4, 56, 7, 89, 3 };
+
+            for (int i = 1; i < numbers.Length; i++)
             {
-                string temp = words[i];
+                int temp = numbers[i];
                 int j = i - 1;
-                while (j >= 0 && words[j].CompareTo(temp) > 0)//Loop till privious element is greater than current element
+                while (j >= 0 && numbers[j] > temp)//Loop till privious element is greater than current element
                 {
-                    words[j + 1] = words[j];//Swap Right greater Element
-                    j=j-1;
+                    numbers[j + 1] = numbers[j];//Swap Right greater Element
+                    j--;
                 }
-                words[j + 1] = temp;
+                numbers[j + 1] = temp;
             }
-            Console.WriteLine("The sorted List of Words is :-");
-            Display(words);
-        }
-        public void Display(string[] words)//Displaying sorted array
-        {
-            foreach(var elements in words)
+            Console.WriteLine("Sorted List of Numbers :-");
+            foreach(int elements in numbers)
             {
-                Console.WriteLine(elements+"\t");
+                Console.Write(elements+"\t" );
             }
         }
+        
+        
     }
 }
 
