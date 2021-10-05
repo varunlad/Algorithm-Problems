@@ -15,9 +15,9 @@ namespace AlgorithmProblems
             int left = 0;
             int right = array.Length - 1;
 
-            while (left <= right)
+            while (left <= right)//Checking if array has more than two elements in it.
             {
-                var middle = (left + right) / 2;
+                var middle = (left + right) / 2;//Finding Middle Element
 
                 if (array[middle] == item)
                     return middle;
@@ -38,6 +38,7 @@ namespace AlgorithmProblems
             var numbers = new[] { 1, 5, 0, 34, 3, 9 ,67,27};
             
             Console.WriteLine("Enter number to be search");
+            Array.Sort(numbers);//For Binary Search Array Has to be Sorted
             int num = Convert.ToInt32(Console.ReadLine());
             var index = BinarySearch(numbers, num);
             Console.WriteLine("It is present at index:-");
