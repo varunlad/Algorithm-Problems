@@ -7,47 +7,46 @@ using System.Threading.Tasks;
 namespace AlgorithmProblems
 {
     class Program
-    { 
-        public static void Main()
-        {
-            var numbers = new[] {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 };//Taking an array of 20 numbers
-            bool num = true; ;
-            Console.WriteLine("Think of a number between 1 and 20");     
-            int first = 0;
-            int last = numbers.Length ;
-            int middle = (first + last) / 2;         
-            int digit;
-            while (num)//Loop will Continue till it becomes false
+    {    
+            static void Main(string[] args)
             {
-                Console.WriteLine("Is your number :" + middle);
-                Console.WriteLine("If not Click 1 if your number is less than : " + middle);
-                Console.WriteLine("If not Click 2 if number is greater than  :" + middle);
-                Console.WriteLine("Yes than Click 3 to exit");
-                 digit = Convert.ToInt32(Console.ReadLine());
-                switch (digit)
+                //Receive Words from User  
+                Console.Write("Enter first word:");
+                string firstWord = Console.ReadLine();
+                Console.Write("Enter second word:");
+                string secondWord = Console.ReadLine();
+               
+                //step 1  
+                char[] char1 = firstWord.ToLower().ToCharArray();
+                char[] char2 = secondWord.ToLower().ToCharArray();
+
+                //Step 2  
+                Array.Sort(char1);
+                Array.Sort(char2);
+
+                //Step 3  
+                string NewWord1 = new string(char1);
+                string NewWord2 = new string(char2);
+
+                //Step 4  
+                //ToLower allows to compare the words in same case, in this case, lower case.  
+                if (NewWord1 == NewWord2)
                 {
-                    case 1:
-                        first = first;
-                        last = middle - 1;  //Making last Element as last to the Middle Element                     
-                        middle = (first + last) / 2;                     
-                        break;
-                    case 2:
-                        first = middle + 1;//Making First element as next to the Middle Element
-                        last = last;
-                        middle = (first + last) / 2;                     
-                        break;
-                    case 3:
-                        num = false;
-                        break;
+                    Console.WriteLine("Yes! Words are Anagrams");
                 }
+                else
+                {
+                    Console.WriteLine("No! Words are not Anagrams");
+                }
+                Console.ReadLine();
             }
-                
-                
-
-          
-
         }
 
+
+
+
     }
-}
+
+    
+
 
